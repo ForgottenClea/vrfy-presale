@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VRFY Presale | OracleChains - Real World Asset Verification</title>
+  <meta name="description" content="Join the VRFY token presale. The native token powering OracleChains - bringing trust to Real World Assets on-chain.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #FF6B35;
+      --primary-dark: #E55A2B;
+      --secondary: #1A7EF7;
+      --dark: #0A0A0F;
+      --dark-secondary: #13131A;
+      --dark-card: #1A1A24;
+      --gray: #5F616B;
+      --gray-light: #8B8D97;
+      --white: #FFFFFF;
+      --success: #10B981;
+      --gradient: linear-gradient(135deg, #FF6B35 0%, #FF8F65 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    nav a {
+      color: var(--gray-light);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      transition: color 0.25s;
+    }
+
+    nav a:hover {
+      color: var(--white);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.25s;
+      text-decoration: none;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--gradient);
+      color: var(--dark);
+      box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(255, 107, 53, 0.4);
+    }
+
+    .btn-secondary {
+      background: var(--dark-card);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .btn-secondary:hover {
+      background: var(--gray);
+    }
+
+    /* Marquee */
+    .marquee-wrapper {
+      background: var(--secondary);
+      padding: 12px 0;
+      margin-top: 73px;
+      overflow: hidden;
+    }
+
+    .marquee {
+      display: flex;
+      animation: marquee 30s linear infinite;
+    }
+
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 40px;
+      font-weight: 600;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Hero */
+    .hero {
+      padding: 80px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(255,107,53,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 64px;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .hero-content h1 span {
+      color: var(--primary);
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      color: var(--gray-light);
+      margin-bottom: 32px;
+      max-width: 500px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+    }
+
+    /* Presale Widget */
+    .presale-widget {
+      background: var(--dark-card);
+      border-radius: 16px;
+      padding: 32px;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .widget-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .widget-header h3 {
+      font-size: 20px;
+    }
+
+    .stage-badge {
+      background: var(--primary);
+      color: var(--dark);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* Countdown */
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .countdown-item {
+      background: var(--dark-secondary);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .countdown-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .countdown-label {
+      font-size: 11px;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* Progress */
+    .progress-section {
+      margin-bottom: 24px;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .progress-raised {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .progress-target {
+      color: var(--gray-light);
+    }
+
+    .progress-bar {
+      height: 12px;
+      background: var(--dark-secondary);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--gradient);
+      border-radius: 6px;
+      width: 42.36%;
+      position: relative;
+      transition: width 0.5s ease;
+    }
+
+    .progress-fill::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .progress-stats {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--gray-light);
+    }
+
+    /* Price Info */
+    .price-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .price-box {
+      background: var(--dark-secondary);
+      border-radius: 8px;
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .price-label {
+      font-size: 12px;
+      color: var(--gray);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .price-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .price-value.current {
+      color: var(--success);
+    }
+
+    .price-value.next {
+      color: var(--gray-light);
+    }
+
+    /* Buy Section */
+    .buy-section {
+      margin-bottom: 16px;
+    }
+
+    .buy-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .buy-tab {
+      flex: 1;
+      padding: 12px;
+      background: var(--dark-secondary);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: var(--gray-light);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .buy-tab.active {
+      background: var(--dark-card);
+      border-color: var(--primary);
+      color: var(--white);
+    }
+
+    .buy-input-group {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .buy-input {
+      width: 100%;
+      padding: 16px;
+      padding-right: 80px;
+      background: var(--dark-secondary);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: var(--white);
+      font-size: 18px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+    }
+
+    .buy-input:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .buy-currency {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray);
+      font-weight: 600;
+    }
+
+    .buy-output {
+      background: var(--dark-secondary);
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .buy-output-label {
+      color: var(--gray-light);
+      font-size: 14px;
+    }
+
+    .buy-output-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .widget-btn {
+      width: 100%;
+      padding: 18px;
+      font-size: 16px;
+    }
+
+    .wallet-note {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    /* Stats Section */
+    .stats-section {
+      padding: 80px 0;
+      background: var(--dark-secondary);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .stat-card {
+      background: var(--dark-card);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .stat-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      color: var(--gray-light);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* How to Buy */
+    .how-to-buy {
+      padding: 80px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      color: var(--gray-light);
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .step-card {
+      background: var(--dark-card);
+      border-radius: 12px;
+      padding: 32px;
+      border: 2px dashed rgba(255,255,255,0.1);
+      position: relative;
+      transition: all 0.25s;
+    }
+
+    .step-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+
+    .step-card h4 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .step-card p {
+      color: var(--gray-light);
+      font-size: 14px;
+    }
+
+    /* Tokenomics */
+    .tokenomics {
+      padding: 80px 0;
+      background: var(--dark-secondary);
+    }
+
+    .tokenomics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .tokenomics-chart {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .chart-placeholder {
+      width: 100%;
+      aspect-ratio: 1;
+      background: conic-gradient(
+        var(--primary) 0deg 93.6deg,
+        var(--secondary) 93.6deg 172.8deg,
+        var(--success) 172.8deg 216deg,
+        var(--gray) 216deg 360deg
+      );
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .chart-placeholder::after {
+      content: '';
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      width: 50%;
+      height: 50%;
+      background: var(--dark-secondary);
+      border-radius: 50%;
+    }
+
+    .chart-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 1;
+    }
+
+    .chart-total {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .chart-label {
+      font-size: 12px;
+      color: var(--gray-light);
+    }
+
+    .tokenomics-info h3 {
+      font-size: 32px;
+      margin-bottom: 24px;
+    }
+
+    .tokenomics-list {
+      list-style: none;
+    }
+
+    .tokenomics-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .tokenomics-color {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+    }
+
+    .tokenomics-name {
+      flex: 1;
+      font-weight: 500;
+    }
+
+    .tokenomics-percent {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 80px 0;
+    }
+
+    .faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--dark-card);
+      border-radius: 12px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 24px;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-icon {
+      font-size: 24px;
+      color: var(--primary);
+      transition: transform 0.25s;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+    }
+
+    .faq-answer p {
+      padding: 0 24px 24px;
+      color: var(--gray-light);
+      line-height: 1.8;
+    }
+
+    /* Footer */
+    footer {
+      padding: 60px 0 30px;
+      background: var(--dark-secondary);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand h3 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      color: var(--gray-light);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: var(--dark-card);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-light);
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+
+    .social-link:hover {
+      background: var(--primary);
+      color: var(--dark);
+    }
+
+    .footer-column h4 {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+
+    .footer-column a {
+      display: block;
+      color: var(--gray-light);
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 12px;
+      transition: color 0.25s;
+    }
+
+    .footer-column a:hover {
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      font-size: 14px;
+      color: var(--gray);
+    }
+
+    /* Mobile */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-content h1 {
+        font-size: 48px;
+      }
+
+      .stats-grid,
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .tokenomics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hero-content h1 {
+        font-size: 36px;
+      }
+
+      .section-header h2 {
+        font-size: 32px;
+      }
+
+      .stats-grid,
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <a href="/" class="logo">
+        <span>VRFY</span> PRESALE
+      </a>
+      <nav>
+        <a href="#how-to-buy">How to Buy</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://oraclechains.io" target="_blank">OracleChains</a>
+        <a href="#" class="btn btn-primary">Connect Wallet</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Marquee -->
+  <div class="marquee-wrapper">
+    <div class="marquee">
+      <div class="marquee-item">STAGE 2 NOW LIVE</div>
+      <div class="marquee-item">$847,250 RAISED</div>
+      <div class="marquee-item">1,847 PARTICIPANTS</div>
+      <div class="marquee-item">NEXT PRICE INCREASE IN 3 DAYS</div>
+      <div class="marquee-item">STAGE 2 NOW LIVE</div>
+      <div class="marquee-item">$847,250 RAISED</div>
+      <div class="marquee-item">1,847 PARTICIPANTS</div>
+      <div class="marquee-item">NEXT PRICE INCREASE IN 3 DAYS</div>
+      <div class="marquee-item">STAGE 2 NOW LIVE</div>
+      <div class="marquee-item">$847,250 RAISED</div>
+      <div class="marquee-item">1,847 PARTICIPANTS</div>
+      <div class="marquee-item">NEXT PRICE INCREASE IN 3 DAYS</div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1>THE FUTURE OF <span>RWA VERIFICATION</span></h1>
+          <p>VRFY powers the OracleChains network - bringing trustless verification to Real World Assets. Property valuations, ownership records, compliance checks - all verified on-chain.</p>
+          <div class="hero-buttons">
+            <a href="#presale" class="btn btn-primary">Buy VRFY Now</a>
+            <a href="https://oraclechains.io" class="btn btn-secondary">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Presale Widget -->
+        <div class="presale-widget" id="presale">
+          <div class="widget-header">
+            <h3>VRFY TOKEN PRESALE</h3>
+            <span class="stage-badge">Stage 2</span>
+          </div>
+
+          <!-- Countdown -->
+          <div class="countdown">
+            <div class="countdown-item">
+              <div class="countdown-value" id="days">03</div>
+              <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-value" id="hours">14</div>
+              <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-value" id="minutes">27</div>
+              <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-value" id="seconds">45</div>
+              <div class="countdown-label">Seconds</div>
+            </div>
+          </div>
+
+          <!-- Progress -->
+          <div class="progress-section">
+            <div class="progress-header">
+              <span class="progress-raised">$847,250 USDT Raised</span>
+              <span class="progress-target">Target: $2,000,000</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+            <div class="progress-stats">
+              <span>423,625,000 VRFY Sold</span>
+              <span>42.36% Complete</span>
+            </div>
+          </div>
+
+          <!-- Price Info -->
+          <div class="price-info">
+            <div class="price-box">
+              <div class="price-label">Current Price</div>
+              <div class="price-value current">$0.002</div>
+            </div>
+            <div class="price-box">
+              <div class="price-label">Next Stage Price</div>
+              <div class="price-value next">$0.003</div>
+            </div>
+          </div>
+
+          <!-- Buy Section -->
+          <div class="buy-section">
+            <div class="buy-tabs">
+              <button class="buy-tab active" data-currency="ETH">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M10 0L4 10l6 3.5L16 10 10 0zM4 11l6 9 6-9-6 3.5L4 11z"/></svg>
+                ETH
+              </button>
+              <button class="buy-tab" data-currency="USDT">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2" fill="none"/><text x="10" y="14" font-size="10" text-anchor="middle">$</text></svg>
+                USDT
+              </button>
+              <button class="buy-tab" data-currency="CARD">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><rect x="2" y="5" width="16" height="10" rx="2" stroke="currentColor" stroke-width="2" fill="none"/><line x1="2" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="2"/></svg>
+                Card
+              </button>
+            </div>
+
+            <div class="buy-input-group">
+              <input type="number" class="buy-input" id="buyAmount" placeholder="0.0" value="0.1">
+              <span class="buy-currency" id="currencyLabel">ETH</span>
+            </div>
+
+            <div class="buy-output">
+              <span class="buy-output-label">You will receive</span>
+              <span class="buy-output-value" id="receiveAmount">125,000 VRFY</span>
+            </div>
+
+            <button class="btn btn-primary widget-btn" id="connectWallet">
+              Connect Wallet
+            </button>
+
+            <p class="wallet-note">Supported: MetaMask, WalletConnect, Coinbase Wallet</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">$847K+</div>
+          <div class="stat-label">Total Raised</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">1,847</div>
+          <div class="stat-label">Participants</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">10B</div>
+          <div class="stat-label">Total Supply</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">$16T</div>
+          <div class="stat-label">RWA Market</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Buy -->
+  <section class="how-to-buy" id="how-to-buy">
+    <div class="container">
+      <div class="section-header">
+        <h2>HOW TO BUY VRFY</h2>
+        <p>Join the OracleChains ecosystem in four simple steps</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h4>Create a Wallet</h4>
+          <p>Download MetaMask or use WalletConnect-compatible wallet. Make sure you're on Base network.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h4>Add Funds</h4>
+          <p>Fund your wallet with ETH or USDT. You can also purchase directly with card.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h4>Connect & Buy</h4>
+          <p>Connect your wallet to this site, enter your amount, and confirm the transaction.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h4>Claim Tokens</h4>
+          <p>After presale ends, claim your VRFY tokens and join the OracleChains network.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tokenomics -->
+  <section class="tokenomics" id="tokenomics">
+    <div class="container">
+      <div class="section-header">
+        <h2>TOKENOMICS</h2>
+        <p>Fair distribution designed for long-term ecosystem growth</p>
+      </div>
+
+      <div class="tokenomics-grid">
+        <div class="tokenomics-chart">
+          <div class="chart-placeholder">
+            <div class="chart-center">
+              <div class="chart-total">10B</div>
+              <div class="chart-label">Total Supply</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tokenomics-info">
+          <h3>VRFY ALLOCATION</h3>
+          <ul class="tokenomics-list">
+            <li class="tokenomics-item">
+              <span class="tokenomics-color" style="background: var(--primary)"></span>
+              <span class="tokenomics-name">Public Presale</span>
+              <span class="tokenomics-percent">26%</span>
+            </li>
+            <li class="tokenomics-item">
+              <span class="tokenomics-color" style="background: var(--secondary)"></span>
+              <span class="tokenomics-name">Liquidity Pool</span>
+              <span class="tokenomics-percent">22%</span>
+            </li>
+            <li class="tokenomics-item">
+              <span class="tokenomics-color" style="background: var(--success)"></span>
+              <span class="tokenomics-name">Validator Rewards</span>
+              <span class="tokenomics-percent">12%</span>
+            </li>
+            <li class="tokenomics-item">
+              <span class="tokenomics-color" style="background: var(--gray)"></span>
+              <span class="tokenomics-name">Ecosystem Development</span>
+              <span class="tokenomics-percent">40%</span>
+            </li>
+          </ul>
+          <p style="color: var(--gray-light); margin-top: 24px; font-size: 14px;">
+            <strong>Team Allocation:</strong> 7.77% (No lock, no vest - team is fully committed)
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>FAQ</h2>
+        <p>Common questions about the VRFY presale</p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            What is VRFY token?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>VRFY is the native utility token of the OracleChains network. It powers real-world asset verification including property valuations, ownership records, compliance checks, and authentication services - all verified on-chain through our decentralized validator network.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What network is VRFY on?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>VRFY is deployed on Base network (Coinbase's L2). This provides fast transactions, low gas fees, and seamless integration with the broader Ethereum ecosystem.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            When can I claim my tokens?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Tokens will be claimable immediately after the presale concludes and liquidity is added. You'll receive a notification when claiming is available. There is no vesting period for presale participants.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How does the price increase work?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The presale has 5 stages. Each stage increases the price by 50%. Stage 1 was $0.001, Stage 2 is $0.002, Stage 3 will be $0.003, and so on. Early participants get the best price.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Is there a minimum/maximum purchase?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Minimum purchase is $10 USD equivalent. There is no maximum - you can participate with any amount above the minimum.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What can I do with VRFY tokens?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>VRFY tokens are used to: 1) Pay for oracle queries (RWA verification), 2) Stake as a validator to earn rewards, 3) Participate in governance, 4) Access premium verification services.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>VRFY <span style="color: var(--primary)">PRESALE</span></h3>
+          <p>The native token powering OracleChains - bringing trust to Real World Assets through decentralized verification.</p>
+          <div class="social-links">
+            <a href="#" class="social-link">X</a>
+            <a href="#" class="social-link">TG</a>
+            <a href="#" class="social-link">DC</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>PRESALE</h4>
+          <a href="#presale">Buy VRFY</a>
+          <a href="#how-to-buy">How to Buy</a>
+          <a href="#tokenomics">Tokenomics</a>
+          <a href="#faq">FAQ</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>ECOSYSTEM</h4>
+          <a href="https://oraclechains.io">OracleChains</a>
+          <a href="#">Validators</a>
+          <a href="#">Documentation</a>
+          <a href="#">GitHub</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>LEGAL</h4>
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Disclaimer</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 OracleChains. All rights reserved.</p>
+        <p>Contract: 0x... (To be deployed)</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Countdown Timer
+    function updateCountdown() {
+      const endDate = new Date();
+      endDate.setDate(endDate.getDate() + 3);
+      endDate.setHours(endDate.getHours() + 14);
+
+      const now = new Date();
+      const diff = endDate - now;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+
+    // Buy Tabs
+    const buyTabs = document.querySelectorAll('.buy-tab');
+    const currencyLabel = document.getElementById('currencyLabel');
+    const buyAmount = document.getElementById('buyAmount');
+    const receiveAmount = document.getElementById('receiveAmount');
+
+    const prices = {
+      ETH: 2500,
+      USDT: 1,
+      CARD: 1
+    };
+
+    const vrfyPrice = 0.002;
+
+    function updateReceiveAmount() {
+      const currency = document.querySelector('.buy-tab.active').dataset.currency;
+      const amount = parseFloat(buyAmount.value) || 0;
+      const usdValue = amount * prices[currency];
+      const vrfyAmount = Math.floor(usdValue / vrfyPrice);
+      receiveAmount.textContent = vrfyAmount.toLocaleString() + ' VRFY';
+    }
+
+    buyTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        buyTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currencyLabel.textContent = tab.dataset.currency;
+        updateReceiveAmount();
+      });
+    });
+
+    buyAmount.addEventListener('input', updateReceiveAmount);
+
+    // Connect Wallet Button
+    document.getElementById('connectWallet').addEventListener('click', async () => {
+      if (typeof window.ethereum !== 'undefined') {
+        try {
+          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+          const btn = document.getElementById('connectWallet');
+          btn.textContent = accounts[0].slice(0, 6) + '...' + accounts[0].slice(-4);
+          btn.style.background = 'var(--success)';
+        } catch (error) {
+          console.error('User rejected connection');
+        }
+      } else {
+        alert('Please install MetaMask or another Web3 wallet');
+      }
+    });
+  </script>
+</body>
+</html>
