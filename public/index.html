@@ -310,7 +310,7 @@
       height: 100%;
       background: var(--gradient);
       border-radius: 6px;
-      width: 42.36%;
+      width: 0.62%;
       position: relative;
       transition: width 0.5s ease;
     }
@@ -804,6 +804,62 @@
       color: var(--primary);
     }
 
+    /* Legal Disclaimer */
+    .legal-disclaimer {
+      background: var(--dark-card);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 40px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .legal-disclaimer h4 {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .disclaimer-content {
+      color: var(--gray-light);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .disclaimer-content p {
+      margin-bottom: 16px;
+    }
+
+    .disclaimer-content strong {
+      color: var(--gray);
+      font-weight: 600;
+    }
+
+    .disclaimer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .disclaimer-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .disclaimer-icon {
+      color: var(--primary);
+      font-size: 16px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .disclaimer-text {
+      font-size: 13px;
+      color: var(--gray-light);
+    }
+
     .footer-bottom {
       display: flex;
       justify-content: space-between;
@@ -865,6 +921,14 @@
         grid-template-columns: 1fr;
       }
 
+      .disclaimer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .legal-disclaimer {
+        padding: 24px 20px;
+      }
+
       .footer-bottom {
         flex-direction: column;
         gap: 16px;
@@ -893,18 +957,18 @@
   <!-- Marquee -->
   <div class="marquee-wrapper">
     <div class="marquee">
-      <div class="marquee-item">STAGE 2 NOW LIVE</div>
-      <div class="marquee-item">$847,250 RAISED</div>
-      <div class="marquee-item">1,847 PARTICIPANTS</div>
-      <div class="marquee-item">NEXT PRICE INCREASE IN 3 DAYS</div>
-      <div class="marquee-item">STAGE 2 NOW LIVE</div>
-      <div class="marquee-item">$847,250 RAISED</div>
-      <div class="marquee-item">1,847 PARTICIPANTS</div>
-      <div class="marquee-item">NEXT PRICE INCREASE IN 3 DAYS</div>
-      <div class="marquee-item">STAGE 2 NOW LIVE</div>
-      <div class="marquee-item">$847,250 RAISED</div>
-      <div class="marquee-item">1,847 PARTICIPANTS</div>
-      <div class="marquee-item">NEXT PRICE INCREASE IN 3 DAYS</div>
+      <div class="marquee-item">STAGE 1 NOW LIVE</div>
+      <div class="marquee-item">$12,450 RAISED</div>
+      <div class="marquee-item">47 PARTICIPANTS</div>
+      <div class="marquee-item">NEXT PRICE INCREASE IN 14 DAYS</div>
+      <div class="marquee-item">STAGE 1 NOW LIVE</div>
+      <div class="marquee-item">$12,450 RAISED</div>
+      <div class="marquee-item">47 PARTICIPANTS</div>
+      <div class="marquee-item">NEXT PRICE INCREASE IN 14 DAYS</div>
+      <div class="marquee-item">STAGE 1 NOW LIVE</div>
+      <div class="marquee-item">$12,450 RAISED</div>
+      <div class="marquee-item">47 PARTICIPANTS</div>
+      <div class="marquee-item">NEXT PRICE INCREASE IN 14 DAYS</div>
     </div>
   </div>
 
@@ -925,25 +989,25 @@
         <div class="presale-widget" id="presale">
           <div class="widget-header">
             <h3>VRFY TOKEN PRESALE</h3>
-            <span class="stage-badge">Stage 2</span>
+            <span class="stage-badge">Stage 1</span>
           </div>
 
           <!-- Countdown -->
           <div class="countdown">
             <div class="countdown-item">
-              <div class="countdown-value" id="days">03</div>
+              <div class="countdown-value" id="days">14</div>
               <div class="countdown-label">Days</div>
             </div>
             <div class="countdown-item">
-              <div class="countdown-value" id="hours">14</div>
+              <div class="countdown-value" id="hours">00</div>
               <div class="countdown-label">Hours</div>
             </div>
             <div class="countdown-item">
-              <div class="countdown-value" id="minutes">27</div>
+              <div class="countdown-value" id="minutes">00</div>
               <div class="countdown-label">Minutes</div>
             </div>
             <div class="countdown-item">
-              <div class="countdown-value" id="seconds">45</div>
+              <div class="countdown-value" id="seconds">00</div>
               <div class="countdown-label">Seconds</div>
             </div>
           </div>
@@ -951,15 +1015,15 @@
           <!-- Progress -->
           <div class="progress-section">
             <div class="progress-header">
-              <span class="progress-raised">$847,250 USDT Raised</span>
+              <span class="progress-raised">$12,450 USDT Raised</span>
               <span class="progress-target">Target: $2,000,000</span>
             </div>
             <div class="progress-bar">
               <div class="progress-fill"></div>
             </div>
             <div class="progress-stats">
-              <span>423,625,000 VRFY Sold</span>
-              <span>42.36% Complete</span>
+              <span>12,450,000 VRFY Sold</span>
+              <span>0.62% Complete</span>
             </div>
           </div>
 
@@ -967,11 +1031,11 @@
           <div class="price-info">
             <div class="price-box">
               <div class="price-label">Current Price</div>
-              <div class="price-value current">$0.002</div>
+              <div class="price-value current">$0.001</div>
             </div>
             <div class="price-box">
               <div class="price-label">Next Stage Price</div>
-              <div class="price-value next">$0.003</div>
+              <div class="price-value next">$0.002</div>
             </div>
           </div>
 
@@ -999,7 +1063,7 @@
 
             <div class="buy-output">
               <span class="buy-output-label">You will receive</span>
-              <span class="buy-output-value" id="receiveAmount">125,000 VRFY</span>
+              <span class="buy-output-value" id="receiveAmount">250,000 VRFY</span>
             </div>
 
             <button class="btn btn-primary widget-btn" id="connectWallet">
@@ -1018,11 +1082,11 @@
     <div class="container">
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-value">$847K+</div>
+          <div class="stat-value">$12.5K</div>
           <div class="stat-label">Total Raised</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">1,847</div>
+          <div class="stat-value">47</div>
           <div class="stat-label">Participants</div>
         </div>
         <div class="stat-card">
@@ -1175,7 +1239,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>The presale has 5 stages. Each stage increases the price by 50%. Stage 1 was $0.001, Stage 2 is $0.002, Stage 3 will be $0.003, and so on. Early participants get the best price.</p>
+            <p>The presale has 5 stages. Each stage increases the price by 100%. Stage 1 is $0.001, Stage 2 is $0.002, Stage 3 will be $0.003, and so on. Early participants get the best price.</p>
           </div>
         </div>
 
@@ -1240,6 +1304,61 @@
         </div>
       </div>
 
+      <!-- Legal Disclaimer -->
+      <div class="legal-disclaimer">
+        <h4>IMPORTANT LEGAL DISCLAIMER</h4>
+
+        <div class="disclaimer-content">
+          <p><strong>Not Financial Advice:</strong> The information provided on this website does not constitute investment advice, financial advice, trading advice, or any other sort of advice. You should not treat any of the website's content as such. OracleChains does not recommend that any cryptocurrency should be bought, sold, or held by you. Conduct your own due diligence and consult your financial advisor before making any investment decisions.</p>
+
+          <div class="disclaimer-grid">
+            <div class="disclaimer-item">
+              <span class="disclaimer-icon">⚠</span>
+              <span class="disclaimer-text"><strong>High Risk Investment:</strong> Cryptocurrency investments carry substantial risk. You may lose all of your invested capital. Never invest more than you can afford to lose.</span>
+            </div>
+
+            <div class="disclaimer-item">
+              <span class="disclaimer-icon">⚠</span>
+              <span class="disclaimer-text"><strong>No Guarantees:</strong> There is no guarantee of returns, token value appreciation, or that VRFY tokens will have any value whatsoever. Token prices are highly volatile and unpredictable.</span>
+            </div>
+
+            <div class="disclaimer-item">
+              <span class="disclaimer-icon">⚠</span>
+              <span class="disclaimer-text"><strong>Do Your Own Research:</strong> You are responsible for conducting your own research (DYOR) and making your own investment decisions. Verify all information independently.</span>
+            </div>
+
+            <div class="disclaimer-item">
+              <span class="disclaimer-icon">⚠</span>
+              <span class="disclaimer-text"><strong>Jurisdictional Restrictions:</strong> This token sale may not be available in all jurisdictions. It is your responsibility to ensure participation is legal in your location.</span>
+            </div>
+
+            <div class="disclaimer-item">
+              <span class="disclaimer-icon">⚠</span>
+              <span class="disclaimer-text"><strong>US Persons:</strong> This token offering is not available to US persons or residents. By participating, you represent that you are not a US person as defined by US securities laws.</span>
+            </div>
+
+            <div class="disclaimer-item">
+              <span class="disclaimer-icon">⚠</span>
+              <span class="disclaimer-text"><strong>No Performance Guarantee:</strong> Past performance of similar projects does not indicate or guarantee future results. All forward-looking statements are inherently uncertain.</span>
+            </div>
+
+            <div class="disclaimer-item">
+              <span class="disclaimer-icon">⚠</span>
+              <span class="disclaimer-text"><strong>Smart Contract Risk:</strong> Blockchain technology and smart contracts carry inherent technical risks. Tokens may be lost due to technical failures, hacks, or vulnerabilities.</span>
+            </div>
+
+            <div class="disclaimer-item">
+              <span class="disclaimer-icon">⚠</span>
+              <span class="disclaimer-text"><strong>Regulatory Risk:</strong> Cryptocurrency regulations are evolving. Future regulatory changes may adversely affect the project, token value, or your ability to use or trade tokens.</span>
+            </div>
+          </div>
+
+          <p style="margin-top: 24px; text-align: center; font-size: 12px; color: var(--gray);">
+            By participating in this token presale, you acknowledge that you have read, understood, and agree to accept all risks associated with cryptocurrency investments. You confirm that you are legally permitted to participate in token sales in your jurisdiction and that you are not a prohibited person under applicable laws.
+          </p>
+        </div>
+      </div>
+
       <div class="footer-bottom">
         <p>&copy; 2024 OracleChains. All rights reserved.</p>
         <p>Contract: 0x... (To be deployed)</p>
@@ -1250,22 +1369,30 @@
   <script>
     // Countdown Timer
     function updateCountdown() {
+      // Set end date to 14 days from now
       const endDate = new Date();
-      endDate.setDate(endDate.getDate() + 3);
-      endDate.setHours(endDate.getHours() + 14);
+      endDate.setDate(endDate.getDate() + 14);
+      endDate.setHours(0, 0, 0, 0);
 
       const now = new Date();
       const diff = endDate - now;
 
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-      document.getElementById('days').textContent = String(days).padStart(2, '0');
-      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+      } else {
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+      }
     }
 
     setInterval(updateCountdown, 1000);
@@ -1291,7 +1418,7 @@
       CARD: 1
     };
 
-    const vrfyPrice = 0.002;
+    const vrfyPrice = 0.001;
 
     function updateReceiveAmount() {
       const currency = document.querySelector('.buy-tab.active').dataset.currency;
