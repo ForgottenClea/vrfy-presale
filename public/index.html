@@ -577,6 +577,145 @@
       font-size: 14px;
     }
 
+    /* Problem Section */
+    .problem-section {
+      padding: 80px 0;
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .problem-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,107,53,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .problem-content h2 {
+      font-size: 48px;
+      margin-bottom: 24px;
+      color: var(--primary);
+    }
+
+    .problem-content p {
+      color: var(--gray-light);
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .problem-stats {
+      display: grid;
+      gap: 20px;
+    }
+
+    .problem-stat-item {
+      background: var(--dark-card);
+      border-radius: 12px;
+      padding: 24px;
+      border-left: 4px solid var(--primary);
+      transition: all 0.25s;
+    }
+
+    .problem-stat-item:hover {
+      transform: translateX(8px);
+      border-left-color: var(--secondary);
+    }
+
+    .problem-stat-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .problem-stat-label {
+      color: var(--gray-light);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Use Cases Section */
+    .use-cases-section {
+      padding: 80px 0;
+      background: var(--dark-secondary);
+    }
+
+    .use-cases-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .use-case-card {
+      background: var(--dark-card);
+      border-radius: 12px;
+      padding: 32px;
+      border: 2px solid rgba(255,255,255,0.05);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .use-case-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .use-case-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+    }
+
+    .use-case-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .use-case-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      display: block;
+      filter: grayscale(0.3);
+      transition: all 0.3s;
+    }
+
+    .use-case-card:hover .use-case-icon {
+      filter: grayscale(0);
+      transform: scale(1.1);
+    }
+
+    .use-case-card h4 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+
+    .use-case-card p {
+      color: var(--gray-light);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
     /* Tokenomics */
     .tokenomics {
       padding: 80px 0;
@@ -886,6 +1025,15 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .problem-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .use-cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .tokenomics-grid {
         grid-template-columns: 1fr;
       }
@@ -910,6 +1058,10 @@
 
       .stats-grid,
       .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .use-cases-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1102,6 +1254,40 @@
     </div>
   </section>
 
+  <!-- The Problem -->
+  <section class="problem-section">
+    <div class="container">
+      <div class="problem-grid">
+        <div class="problem-content">
+          <h2>THE PROBLEM</h2>
+          <p>The Real World Asset market is massive but fundamentally broken. Traditional verification systems are slow, expensive, and vulnerable to fraud. Bringing trillions in RWAs on-chain requires trustworthy verification infrastructure that doesn't exist today.</p>
+        </div>
+        <div class="problem-stats">
+          <div class="problem-stat-item">
+            <div class="problem-stat-value">$16 Trillion</div>
+            <div class="problem-stat-label">RWA market lacks reliable on-chain verification infrastructure</div>
+          </div>
+          <div class="problem-stat-item">
+            <div class="problem-stat-value">Days to Weeks</div>
+            <div class="problem-stat-label">Manual verification processes are slow, expensive, and error-prone</div>
+          </div>
+          <div class="problem-stat-item">
+            <div class="problem-stat-value">Billions Lost</div>
+            <div class="problem-stat-label">Fraud and forgery cost industries billions annually</div>
+          </div>
+          <div class="problem-stat-item">
+            <div class="problem-stat-value">No Standards</div>
+            <div class="problem-stat-label">No unified verification framework across borders and asset classes</div>
+          </div>
+          <div class="problem-stat-item">
+            <div class="problem-stat-value">Trust Gap</div>
+            <div class="problem-stat-label">Institutions can't trust off-chain data for on-chain decisions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Token Utility -->
   <section class="how-to-buy" id="utility">
     <div class="container">
@@ -1130,6 +1316,66 @@
           <div class="step-number" style="background: var(--primary);">&#9830;</div>
           <h4>Premium Access</h4>
           <p>Unlock premium verification tiers, priority query processing, advanced API endpoints, and institutional-grade services.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RWA Use Cases -->
+  <section class="use-cases-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>RWA USE CASES</h2>
+        <p>VRFY enables verification across all major Real World Asset categories</p>
+      </div>
+
+      <div class="use-cases-grid">
+        <div class="use-case-card">
+          <span class="use-case-icon">🏢</span>
+          <h4>Real Estate</h4>
+          <p>Property titles, valuations, ownership records, and deed verification on-chain</p>
+        </div>
+
+        <div class="use-case-card">
+          <span class="use-case-icon">⚡</span>
+          <h4>Commodities</h4>
+          <p>Gold reserves, oil storage, agricultural certifications, and commodity authenticity</p>
+        </div>
+
+        <div class="use-case-card">
+          <span class="use-case-icon">🎨</span>
+          <h4>Art & Collectibles</h4>
+          <p>Authentication certificates, provenance tracking, and collector documentation</p>
+        </div>
+
+        <div class="use-case-card">
+          <span class="use-case-icon">📦</span>
+          <h4>Supply Chain</h4>
+          <p>Product origin verification, authenticity checks, and logistics documentation</p>
+        </div>
+
+        <div class="use-case-card">
+          <span class="use-case-icon">🛡️</span>
+          <h4>Identity & KYC</h4>
+          <p>Accredited investor status, sanctions screening, and compliance verification</p>
+        </div>
+
+        <div class="use-case-card">
+          <span class="use-case-icon">🔐</span>
+          <h4>Insurance</h4>
+          <p>Claims verification, asset documentation, and underwriting data validation</p>
+        </div>
+
+        <div class="use-case-card">
+          <span class="use-case-icon">📊</span>
+          <h4>Private Securities</h4>
+          <p>Stock certificates, cap table verification, and shareholder documentation</p>
+        </div>
+
+        <div class="use-case-card">
+          <span class="use-case-icon">💎</span>
+          <h4>DeFi Collateral</h4>
+          <p>Real asset backing verification for on-chain loans and credit protocols</p>
         </div>
       </div>
     </div>
